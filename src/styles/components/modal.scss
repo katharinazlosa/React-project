@@ -1,0 +1,47 @@
+.modal {
+  position: fixed;
+  background-color: var(--color-white);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  width: 40rem;
+  border: none;
+  padding: 2rem;
+  border-radius: 0.5rem;
+
+  &__overlay {
+    background-color: var(--color-overlay);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0rem;
+    left: 0;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: right;
+    &__close {
+      cursor: pointer;
+      padding: 0 0.5rem;
+      border-radius: 0.3rem;
+    }
+  }
+
+  &__footer {
+    margin: 1rem;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.button {
+  background-color: var(--color-red-500);
+  padding: 1rem 2rem;
+  color: var(--color-white);
+  border-radius: 1rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
