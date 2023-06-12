@@ -3,7 +3,7 @@ import { MouseEventHandler, useState } from "react";
 type ButtonProps = {
   text: string;
   color?: "red" | "green" | "blue";
-  onClick?: MouseEventHandler;
+  onClick?: () => void;
 };
 
 const Button = ({ onClick, text, color = "green" }: ButtonProps) => {

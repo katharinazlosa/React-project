@@ -6,13 +6,15 @@ type InputProps = {
   icon?: ReactNode;
   size?: "md" | "sm";
   value: string;
+  onChange: () => void;
 };
 
-const Input = ({ placeholder, icon, size, value }: InputProps) => {
+const Input = ({ placeholder, icon, size, value, onChange }: InputProps) => {
   return (
     <>
       <div className="input__wrapper">
         <input
+          onChange={value}
           value={value}
           className={`input ${icon && "input--hasIcon"} input--${size}`}
           type="text"

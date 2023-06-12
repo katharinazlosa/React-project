@@ -10,6 +10,7 @@ import { useState } from "react";
 
 function App() {
   const [inputValue, setInputValue] = useState<string>("");
+  const [value, setValue] = useState<string>("");
 
   return (
     <Container size="sm">
@@ -22,6 +23,7 @@ function App() {
       <Divider marginBottom="sm" marginTop="ig" />
       <Input icon={<IconSearch />} placeholder="Enter text..." size="sm" />
       <Input value={inputValue} />
+      <Input value={value} onChange={(value) => setValue(value)} />
     </Container>
   );
 }
