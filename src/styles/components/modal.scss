@@ -9,14 +9,16 @@
   border: none;
   padding: 2rem;
   border-radius: 0.5rem;
+  z-index: 2;
 
   &__overlay {
     background-color: var(--color-overlay);
     width: 100vw;
     height: 100vh;
     position: fixed;
-    top: 0rem;
+    top: 0;
     left: 0;
+    z-index: 1;
   }
 
   &__header {

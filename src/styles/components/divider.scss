@@ -1,0 +1,26 @@
+.divider {
+  height: 1px;
+  background-color: var(--color-black);
+  &--mb {
+    &--sm {
+      margin-bottom: 1rem;
+    }
+    &--md {
+      margin-bottom: 1rem;
+    }
+    &--ig {
+      margin-bottom: 1rem;
+    }
+  }
+  &--mt {
+    &--sm {
+      margin-top: 1rem;
+    }
+    &--md {
+      margin-top: 1rem;
+    }
+    &--ig {
+      margin-top: 1rem;
+    }
+  }
+}
