@@ -21,28 +21,21 @@ const ModalWindow = ({ title, paragraph }: ModalType) => {
           <div className="modal__overlay" onClick={toggleModal}></div>
           <div className="modal">
             <div className="modal__header">
-              {/* <Button text="⨉" color="green" onClick={toggleModal} /> */}
-              <button className="button" onClick={toggleModal}>
-                ⨉
-              </button>
+              <Button text="⨉" color="green" onClick={toggleModal} />
             </div>
             <div className="modal__section">
               <h2>{title}</h2>
               <p>{paragraph}</p>
             </div>
             <div className="modal__footer">
-              <Button text="Submit" />
+              <Button text="Submit" onClick={() => console.log()} />
             </div>
           </div>
         </>
       ) : (
         ""
       )}
-      {/* <Button text="Modal" color="green" onClick={toggleModal} /> */}
-
-      <button className="button" onClick={toggleModal}>
-        Modal
-      </button>
+      <Button text="Modal" color="green" onClick={toggleModal} />
     </>
   );
 };

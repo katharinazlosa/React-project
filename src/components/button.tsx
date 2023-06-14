@@ -1,20 +1,15 @@
-import { MouseEventHandler, useState } from "react";
+import { useState } from "react";
 
 type ButtonProps = {
   text: string;
   color?: "red" | "green" | "blue";
-  onClick?: () => void;
+  onClick: () => void;
 };
 
 const Button = ({ onClick, text, color = "green" }: ButtonProps) => {
-  const [modal, setModal] = useState<boolean>(false);
-
-  const toggleModal = () => {
-    setModal(!modal);
-  };
   return (
     <>
-      <button className={`btn btn--${color}`} onClick={toggleModal}>
+      <button className={`btn btn--${color}`} onClick={(e) => onClick()}>
         {text}
       </button>
     </>
