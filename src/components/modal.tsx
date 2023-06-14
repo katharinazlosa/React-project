@@ -1,13 +1,13 @@
-import { MouseEventHandler, useState } from "react";
+import { MouseEventHandler, ReactNode, useState } from "react";
 import Button from "./button";
 
 type ModalType = {
   title: string;
   paragraph: string;
-  //   onClick?: MouseEventHandler;
+  children: ReactNode;
 };
 
-const ModalWindow = ({ title, paragraph }: ModalType) => {
+const ModalWindow = ({ title, paragraph, children }: ModalType) => {
   const [modal, setModal] = useState<boolean>(false);
 
   const toggleModal = () => {
@@ -23,12 +23,10 @@ const ModalWindow = ({ title, paragraph }: ModalType) => {
             <div className="modal__header">
               <Button text="⨉" color="green" onClick={toggleModal} />
             </div>
-            <div className="modal__section">
-              <h2>{title}</h2>
-              <p>{paragraph}</p>
-            </div>
+            <div className="modal__section">{children}</div>
             <div className="modal__footer">
               <Button text="Submit" onClick={() => console.log()} />
+              <Button text="Cancel" onClick={toggleModal} color="red" />
             </div>
           </div>
         </>

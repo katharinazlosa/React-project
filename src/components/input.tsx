@@ -3,17 +3,26 @@ import IconSearch from "../assets/icons/iconsearch";
 
 type InputProps = {
   placeholder?: string;
-  icon?: ReactNode;
+  icon: ReactNode;
   size?: "md" | "sm";
   value?: string;
   onChange: (value: string) => void;
+  disabled?: boolean;
 };
 
-const Input = ({ placeholder, icon, size, value, onChange }: InputProps) => {
+const Input = ({
+  disabled = false,
+  placeholder,
+  icon,
+  size = "sm",
+  value = "Click",
+  onChange,
+}: InputProps) => {
   return (
     <>
       <div className="input__wrapper">
         <input
+          disabled={disabled}
           onChange={(e) => onChange(e.target.value)}
           value={value}
           className={`input ${icon && "input--hasIcon"} input--${size}`}

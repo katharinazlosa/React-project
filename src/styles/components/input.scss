@@ -5,6 +5,12 @@
   font-size: 1rem;
   transition: all 250ms ease-in-out;
 
+  &:disabled {
+    background-color: var(--color-grey);
+    &:hover {
+      cursor: no-drop;
+    }
+  }
   &:focus-visible {
     outline: none;
     border-color: var(--color-grey);
