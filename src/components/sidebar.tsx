@@ -2,19 +2,21 @@ import { useState } from "react";
 import IconMenu from "../assets/icons/iconmenu";
 import Button from "./button";
 
-type SidebarType = {
-  toggleSidebar: () => void;
-};
+// type SidebarType = {
+//   toggleSidebar: () => void;
+// };
 
-const Sidebar = ({ toggleSidebar }: SidebarType) => {
+const Sidebar = () => {
+  const [sidebar, setSidebar] = useState<boolean>(false);
+
+  const toggleSidebar = () => {
+    setSidebar(!sidebar);
+  };
   return (
     <>
       <Button text="Open menu" color="green" onClick={toggleSidebar} />
       {sidebar ? (
-        <div
-          className="sidebar-box"
-          // style={{width:25%, right:0}}
-        >
+        <div className="sidebar-box">
           <h3 className="sidebar-box__title">
             <IconMenu />
             Menu
