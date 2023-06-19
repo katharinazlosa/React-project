@@ -3,7 +3,7 @@
 type ButtonProps = {
   text: string;
   color?: "red" | "green" | "blue";
-  onClick: () => void;
+  onClick?: (value: string) => void;
 };
 // & ButtonHTMLAttributes<HTMLButtonElement>; ovo dodamo gore iza }
 //a to smo dobili hoveranjem preko button elementa

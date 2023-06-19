@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
 }
 
 body {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Lobster", cursive;
 }
 
 :root {
@@ -22,6 +24,8 @@ body {
 }
 
 //imports
+
+//components
 @import "./components/btn.scss";
 @import "./components/modal.scss";
 @import "./components/divider.scss";
@@ -30,3 +34,8 @@ body {
 @import "./components/input.scss";
 @import "./components/layout.scss";
 @import "./components/sidebar.scss";
+@import "./components/textarea.scss";
+
+//features
+@import "./features/contact.scss";
+@import "./features/home.scss";

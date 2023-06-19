@@ -4,6 +4,8 @@ import Container from "../components/container";
 import Input from "../components/input";
 import Devider from "../components/devider";
 import Modal from "../components/modal";
+import IconSearch from "../assets/icons/iconsearch";
+import IconForest from "../assets/icons/iconforest";
 
 const Home = () => {
   const [newState, setNewState] = useState<string>("");
@@ -20,6 +22,7 @@ const Home = () => {
       <div>teki text</div>
 
       <Input
+        icon={<IconForest />}
         value={newState}
         onChange={(value: string) => setNewState(value)}
       />
@@ -30,11 +33,10 @@ const Home = () => {
           setModal(false);
         }}
         isOpen={modal}
-        title="Moj prvi modal"
-        //kada unutar komponente pozovemo onClose callback ovdje će nam doći kod i izvršit će se sve što napišemo u tijelo arrow funkcije
+        title="Modal naslov"
         onClose={() => setModal(false)}
       >
-        Ovo je neki modal content
+        This is random modal text.
       </Modal>
     </Container>
   );

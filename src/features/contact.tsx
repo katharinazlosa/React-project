@@ -5,11 +5,13 @@ import Container from "../components/container";
 import Devider from "../components/devider";
 import Field from "../components/field";
 import Button from "../components/button";
+import Textarea from "../components/textarea";
 
 const initialData: ValuesType = {
   firstName: "",
   lastName: "",
   email: "",
+  textarea: "",
 };
 
 const Contact = () => {
@@ -43,6 +45,12 @@ const Contact = () => {
           label="Email"
           value={inputsValue.email}
           onChange={(value) => handleInputsValue(value, "email")}
+        />
+        <Textarea
+          id="Question Box"
+          label="Question Box"
+          value={inputsValue.textarea}
+          onChange={(value) => handleInputsValue(value, "textarea")}
         />
         <Button
           text="Send a message"

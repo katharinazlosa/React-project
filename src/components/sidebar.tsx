@@ -1,40 +1,45 @@
-import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import IconMenu from "../assets/icons/iconmenu";
-import Button from "./button";
 
-// type SidebarType = {
-//   toggleSidebar: () => void;
-// };
+type SidebarProps = {
+  isOpen: boolean;
+  onClose: () => void;
+};
 
-const Sidebar = () => {
-  const [sidebar, setSidebar] = useState<boolean>(false);
+type LinkListType = {
+  path: string;
+  label: string;
+};
 
-  const toggleSidebar = () => {
-    setSidebar(!sidebar);
-  };
+const linkList: LinkListType[] = [
+  {
+    path: "/progress-bar",
+    label: "Progress bar",
+  },
+  {
+    path: "/loader",
+    label: "Loader",
+  },
+];
+
+const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   return (
     <>
-      <Button text="Open menu" color="green" onClick={toggleSidebar} />
-      {sidebar ? (
-        <div className="sidebar-box">
-          <h3 className="sidebar-box__title">
-            <IconMenu />
-            Menu
-          </h3>
-          <a href="#" className="sidebar-box__link">
-            Customers
-          </a>
-          <a href="#" className="sidebar-box__link">
-            Products
-          </a>
-          <a href="#" className="sidebar-box__link">
-            Categories
-          </a>
-          <Button text="Close" color="red" onClick={toggleSidebar} />
-        </div>
-      ) : (
-        ""
-      )}
+      <div className={`sidebar sidebar--${isOpen ? "isActive" : ""}`}>
+        <h3 className="sidebar__title">Menu</h3>
+        {linkList.map((link) => {
+          return (
+            <NavLink
+              key={link.path}
+              className="sidebar__link"
+              onClick={onClose}
+              to={link.path}
+            >
+              {link.label}
+            </NavLink>
+          );
+        })}
+      </div>
     </>
   );
 };

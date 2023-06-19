@@ -34,8 +34,7 @@ const Modal = ({ children, title, isOpen, onClose, onSuccess }: ModalProps) => {
           <div className="modal">
             <div className="modal__header">
               <div className="modal__header__title">{title}</div>
-
-              {/* <IconClose className="modal__header__icon" onClick={onClose} /> */}
+              <Button text="X" onClick={onClose} color="red" />
             </div>
             <div className="modal__body">{children}</div>
             <div className="modal__footer">

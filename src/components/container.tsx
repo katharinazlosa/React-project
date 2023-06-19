@@ -5,7 +5,7 @@ type ContainerProps = {
   size?: "md" | "sm";
 };
 
-const Container = ({ children, size }: ContainerProps) => {
+const Container = ({ children, size = "sm" }: ContainerProps) => {
   return (
     <>
       <div className={`container container--${size}`}>{children}</div>

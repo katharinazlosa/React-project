@@ -1,3 +1,4 @@
+import IconForest from "../assets/icons/iconforest";
 import Input from "./input";
 
 type FieldType = {
@@ -13,7 +14,12 @@ const Field = ({ id, onChange, value, label }: FieldType) => {
         <label className="field__label" htmlFor={id}>
           {label ? label : id}
         </label>
-        <Input name={id} value={value} onChange={onChange} />
+        <Input
+          name={id}
+          value={value}
+          onChange={onChange}
+          icon={<IconForest />}
+        />
       </div>
     </>
   );

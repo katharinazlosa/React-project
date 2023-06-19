@@ -1,31 +1,42 @@
-.sidebar-box {
-  background: rgb(212, 244, 206);
+.sidebar {
+  background-color: rgb(233, 239, 255);
   background: linear-gradient(
-    0deg,
-    rgba(212, 244, 206, 1) 0%,
-    rgba(39, 174, 96, 1) 100%
+    90deg,
+    rgba(233, 239, 255, 1) 0%,
+    rgba(30, 158, 217, 1) 85%
   );
+  position: fixed;
+  top: 6rem;
+  left: -20rem;
+  height: calc(100vh - 7rem);
+  width: 20rem;
+  transition: all 250ms ease;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  width: 15vw;
-  height: 100vh;
-  position: fixed;
-  padding: 1.5rem;
-  color: var(--color-white);
+  justify-content: top;
+  &--isActive {
+    left: 0;
+  }
   &__title {
+    color: white;
     font-size: 2rem;
-    display: flex;
-    align-items: center;
+
+    padding: 1rem 0;
   }
   &__link {
-    color: var(--color-white);
     text-decoration: none;
+    color: white;
     font-size: 1.5rem;
-    padding: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
     &:hover {
-      background-color: var(--color-white);
-      color: var(--color-black);
-      border-radius: 1rem;
+      background-color: var(--color-blue-500);
+      border-radius: 2rem;
+      color: white;
     }
   }
 }
