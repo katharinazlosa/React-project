@@ -1,32 +1,19 @@
-import { useState } from "react";
-import IconForest from "../assets/icons/iconforest";
-import { ValuesType } from "../features/types";
 import Input from "./input";
 
-const initialData: ValuesType = {
-  firstName: "",
-  lastName: "",
-  age: "",
+type FieldType = {
+  id: string;
+  label?: string;
+  value: string;
+  onChange: (value: string) => void;
 };
-
-const Field = ({ text }: ValuesType) => {
-  const [inputsValue, setInputsValue] = useState<ValuesType>(initialData);
-
-  const handleInputsValue = (value: string, id: string) => {
-    const newState: ValuesType = { ...inputsValue };
-    newState[id] = value;
-    setInputsValue(newState);
-  };
-
+const Field = ({ id, onChange, value, label }: FieldType) => {
   return (
     <>
       <div className="field">
-        <label htmlFor="First name">{text}</label>
-        <Input
-          icon={<IconForest />}
-          onChange={(value) => handleInputsValue(value, "firstName")}
-          value={inputsValue.firstName}
-        />
+        <label className="field__label" htmlFor={id}>
+          {label ? label : id}
+        </label>
+        <Input name={id} value={value} onChange={onChange} />
       </div>
     </>
   );

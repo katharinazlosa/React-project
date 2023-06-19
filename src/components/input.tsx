@@ -8,15 +8,17 @@ type InputProps = {
   value?: string;
   onChange: (value: string) => void;
   disabled?: boolean;
+  name?: string;
 };
 
 const Input = ({
   disabled = false,
-  placeholder,
+  placeholder = "",
   icon,
   size = "sm",
   value = "Click",
   onChange,
+  name,
 }: InputProps) => {
   return (
     <>
@@ -28,6 +30,7 @@ const Input = ({
           className={`input ${icon && "input--hasIcon"} input--${size}`}
           type="text"
           placeholder={placeholder}
+          id={name}
         ></input>
         <div className="input__img">{icon}</div>
       </div>

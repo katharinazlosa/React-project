@@ -1,41 +1,51 @@
-import { MouseEventHandler, ReactNode, useState } from "react";
+import { ReactNode, useEffect } from "react";
 import Button from "./button";
 
-type ModalType = {
-  title: string;
-  paragraph: string;
+type ModalProps = {
   children: ReactNode;
+  title: string;
+  isOpen: boolean;
+
+  onClose: () => void;
+  onSuccess?: () => void;
 };
 
-const ModalWindow = ({ title, paragraph, children }: ModalType) => {
-  const [modal, setModal] = useState<boolean>(false);
+const Modal = ({ children, title, isOpen, onClose, onSuccess }: ModalProps) => {
+  useEffect(() => {
+    const bodyElement = document.getElementsByTagName(
+      "body"
+    )[0] as HTMLBodyElement;
 
-  const toggleModal = () => {
-    setModal(!modal);
-  };
+    if (isOpen) {
+      bodyElement.style.overflow = "hidden";
+    } else {
+      bodyElement.style.overflow = "auto";
+    }
+    return () => {
+      console.log("test");
+    };
+  }, [isOpen]);
 
   return (
     <>
-      {modal ? (
-        <>
-          <div className="modal__overlay" onClick={toggleModal}></div>
+      {isOpen && (
+        <div>
+          <div className="modal__overlay" onClick={() => onClose()}></div>
           <div className="modal">
             <div className="modal__header">
-              <Button text="⨉" color="green" onClick={toggleModal} />
+              <div className="modal__header__title">{title}</div>
+
+              {/* <IconClose className="modal__header__icon" onClick={onClose} /> */}
             </div>
-            <div className="modal__section">{children}</div>
+            <div className="modal__body">{children}</div>
             <div className="modal__footer">
-              <Button text="Submit" onClick={() => console.log()} />
-              <Button text="Cancel" onClick={toggleModal} color="red" />
+              {onSuccess && <Button onClick={onSuccess} text="Ok" />}
+              <Button text="Cancel" color="red" onClick={onClose} />
             </div>
           </div>
-        </>
-      ) : (
-        ""
+        </div>
       )}
-      <Button text="Modal" color="green" onClick={toggleModal} />
     </>
   );
 };
-
-export default ModalWindow;
+export default Modal;
