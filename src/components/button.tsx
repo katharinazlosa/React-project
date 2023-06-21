@@ -2,13 +2,15 @@
 
 type ButtonProps = {
   text: string;
-  color?: "red" | "green" | "blue";
+  color?: "red" | "green" | "blue" | "purple" | "white";
   onClick?: (value: string) => void;
+  disabled?: boolean;
+  onFinish?: (value: string) => void;
 };
 // & ButtonHTMLAttributes<HTMLButtonElement>; ovo dodamo gore iza }
 //a to smo dobili hoveranjem preko button elementa
 // ...props dodamo i dolje, spredamo properties od btn atributa
-const Button = ({ onClick, text, color = "green" }: ButtonProps) => {
+const Button = ({ onClick, text, color = "green", disabled }: ButtonProps) => {
   return (
     <>
       <button

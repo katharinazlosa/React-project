@@ -17,6 +17,15 @@ body {
   --color-red-500: #c0392b;
   --color-green-500: #27ae60;
   --color-blue-500: #2980b9;
+  --color-purplegradient: linear-gradient(
+    to right,
+    #800080,
+    #743da5,
+    #5f5fc4,
+    #407cdb,
+    #1297eb
+  );
+  --color-purple-500: #5f5fc4;
   --color-overlay: rgba(97, 97, 97, 0.788);
 
   //border
@@ -35,7 +44,9 @@ body {
 @import "./components/layout.scss";
 @import "./components/sidebar.scss";
 @import "./components/textarea.scss";
+@import "./components/progressbar.scss";
 
 //features
 @import "./features/contact.scss";
 @import "./features/home.scss";
+@import "./features/progressbarpage.scss";
