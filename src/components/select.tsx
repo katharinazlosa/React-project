@@ -11,7 +11,7 @@ type SelectProps = {
 const Select = ({
   options,
   onChange,
-  placeholder = "Select an option",
+  placeholder = "Odaberi",
 }: SelectProps) => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [activeOption, setActiveOption] = useState<OptionType | null>(null);
@@ -48,4 +48,4 @@ const Select = ({
   );
 };
 export default Select;
-31 
+31;

@@ -7,6 +7,7 @@ import NoMatch from "./features/nomatch";
 import LoaderPage from "./features/loaderpage";
 import ProgressBarPage from "./features/progressbarpage";
 import SelectPage from "./features/selectpage";
+import Animals from "./features/animals";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           <Route path="/progress-bar" element={<ProgressBarPage />} />
           <Route path="/loader" element={<LoaderPage />} />
           <Route path="select" element={<SelectPage />} />
+          <Route path="animals" element={<Animals />} />
+
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>

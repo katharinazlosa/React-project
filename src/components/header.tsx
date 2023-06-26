@@ -10,6 +10,10 @@ const headerLinks = [
     path: "/contact",
     label: "Contact",
   },
+  {
+    path: "/animals",
+    label: "Animals",
+  },
 ];
 
 type HeaderProps = {
@@ -31,11 +35,11 @@ const Header = ({ toggleSidebar }: HeaderProps) => {
           <nav className="header__nav">
             {headerLinks.map((link) => {
               return (
-                <>
+                <div key={link.label}>
                   <NavLink to={link.path} className={"header__nav__link"}>
                     {link.label}
                   </NavLink>
-                </>
+                </div>
               );
             })}
           </nav>

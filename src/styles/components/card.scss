@@ -1,0 +1,37 @@
+.card {
+  padding: 1rem;
+  background-color: var(--color-blue-250);
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    &__img {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+  }
+  &__title {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+  &__subtitle {
+    color: var(--color-grey);
+    font-size: 0.75rem;
+  }
+  &__row {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    img {
+      display: block;
+      margin-right: 0.5rem;
+      width: 1rem;
+      align-self: flex-start;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

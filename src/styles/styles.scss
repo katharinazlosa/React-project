@@ -16,6 +16,7 @@ body {
   --color-grey: #2c2b2b;
   --color-red-500: #c0392b;
   --color-green-500: #27ae60;
+  --color-blue-250: #bcd3e2;
   --color-blue-500: #2980b9;
   --color-purplegradient: linear-gradient(
     to right,
@@ -32,6 +33,11 @@ body {
   --border-rounded: 0.5rem;
 }
 
+//responsive breakpoints
+$media-sm: 37.5em;
+$media-md: 53em;
+$media-lg: 64em;
+
 //imports
 
 //components
@@ -47,7 +53,14 @@ body {
 @import "./components/progressbar.scss";
 @import "./components/loader.scss";
 @import "./components/select.scss";
+@import "./components/card.scss";
+@import "./components/paginations.scss";
+
 //features
 @import "./features/contact.scss";
 @import "./features/home.scss";
 @import "./features/progressbarpage.scss";
+@import "./features/animals.scss";
+
+//utils
+@import "./utils/grid.scss";

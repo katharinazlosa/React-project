@@ -1,0 +1,26 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  &__item {
+    background-color: var(--color-blue-250);
+    font-size: 1.25rem;
+    margin-right: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 250s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:last-child {
+      margin: 0;
+    }
+    &.isActive {
+      background-color: var(--color-blue-500);
+      color: var(--color-white);
+    }
+  }
+}

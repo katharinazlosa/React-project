@@ -27,18 +27,10 @@ const SelectPage = () => {
     <Container>
       <h1>Select</h1>
       <Devider />
-      <p className="type--san-serif type--lg">
-        Select komponenta prima "opitons" prop koji je zapravo lista objekata
-        tipa "OptionType". Osim optiona može primiti i placeholder prop koji će
-        nam ispisati kao defaultni label unutar dropdowna.
-      </p>
-      <p className="type--san-serif type--lg">
-        Također komponenta prima onChange callback koji nam daje događaj na
-        svaku promjenu vrijednosti unutar našeg dropdowna
-      </p>
+      <p className="type--san-serif type--lg">Options</p>
       <Select
         options={selectOptions}
-        onChange={(option) => console.log(option)}
+        onChange={(option) => console.log(option)} //callback
       />
     </Container>
   );
