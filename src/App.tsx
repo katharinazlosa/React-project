@@ -4,9 +4,9 @@ import Home from "./features/home";
 import Contact from "./features/contact";
 import Layout from "./components/layout";
 import NoMatch from "./features/nomatch";
-import ProgressBar from "./features/progressbarpage";
-import Loader from "./features/loader";
+import LoaderPage from "./features/loaderpage";
 import ProgressBarPage from "./features/progressbarpage";
+import SelectPage from "./features/selectpage";
 
 function App() {
   return (
@@ -16,7 +16,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="contact" element={<Contact />} />
           <Route path="/progress-bar" element={<ProgressBarPage />} />
-          <Route path="/loader" element={<Loader />} />
+          <Route path="/loader" element={<LoaderPage />} />
+          <Route path="select" element={<SelectPage />} />
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>

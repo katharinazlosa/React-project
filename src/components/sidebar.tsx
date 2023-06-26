@@ -6,7 +6,7 @@ type SidebarProps = {
   onClose: () => void;
 };
 
-type LinkListType = {
+export type LinkListType = {
   path: string;
   label: string;
 };
@@ -19,6 +19,10 @@ const linkList: LinkListType[] = [
   {
     path: "/loader",
     label: "Loader",
+  },
+  {
+    path: "/select",
+    label: "Select",
   },
 ];
 

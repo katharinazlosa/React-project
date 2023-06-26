@@ -2,13 +2,24 @@ import { useEffect, useState } from "react";
 import Button from "../components/button";
 
 type ProgressBarProps = {
-  bgcolor: string;
   completed: number;
-  onFinish: () => void;
+  onFinish?: () => void;
 };
 
-const ProgressBar = ({ bgcolor, completed, onFinish }: ProgressBarProps) => {
+const ProgressBar = ({ completed, onFinish }: ProgressBarProps) => {
   const [progress, setProgress] = useState(0);
+
+  const handleProgress = (progress: number) => {
+    if (progress === 100) {
+      onFinish && onFinish();
+    }
+    if (progress > 100) {
+      return "100%";
+    } else if (progress < 0) {
+      return "0%";
+    }
+    return `${progress}%`;
+  };
 
   useEffect(() => {
     setProgress(completed > 100 ? 100 : completed < 0 ? 0 : completed);
@@ -32,8 +43,10 @@ const ProgressBar = ({ bgcolor, completed, onFinish }: ProgressBarProps) => {
     <>
       <div className="progress-container">
         <div
-          className={`progress-bar ${progress} ? progress-bar__finished : ""`}
-          style={{ width: `${progress}%`, backgroundColor: `${bgcolor}` }}
+          className={`progress-bar ${
+            progress === 100
+          } ? progress-bar__finished : ""`}
+          style={{ width: handleProgress(progress) }}
         >
           {progress}%
         </div>

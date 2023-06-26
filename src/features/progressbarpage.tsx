@@ -8,11 +8,11 @@ const ProgressBarPage = () => {
         <h1>Progress bar</h1>
         <ProgressBar
           onFinish={() => console.log("finished")}
-          bgcolor="#6a1b9a"
+          // completed={progress}
           completed={30}
         />
-        <ProgressBar bgcolor="#6a1b9a" completed={70} />
-        <ProgressBar bgcolor="#6a1b9a" completed={56} />
+        <ProgressBar completed={70} />
+        <ProgressBar completed={56} />
       </Container>
     </>
   );
