@@ -1,10 +1,10 @@
-import { AnimalsType } from "./../features/animals";
+import { AnimalType } from "../features/animals";
 import imgDiet from "./../assets/images/diet.png";
 import imgAnimalClass from "./../assets/images/animalClass.png";
 import imgHabitat from "./../assets/images/habitat.png";
 
 type AnimalCardProps = {
-  animal: AnimalsType;
+  animal: AnimalType;
 };
 
 const AnimalCard = ({ animal }: AnimalCardProps) => {

@@ -22,5 +22,13 @@
       background-color: var(--color-blue-500);
       color: var(--color-white);
     }
+    &.isDisabled {
+      opacity: 0.5;
+      pointer-events: none;
+      user-select: none;
+    }
+    svg {
+      display: block;
+    }
   }
 }

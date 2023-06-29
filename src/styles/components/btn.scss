@@ -5,6 +5,10 @@
   cursor: pointer;
   color: var(--color-white);
   font-size: 1rem;
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
   &--red {
     background-color: var(--color-red-500);
   }
@@ -20,5 +24,35 @@
   &--white {
     border: 1px solid var(--color-purple-500);
     color: var(--color-purple-500);
+  }
+  &--floating {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    border: none;
+    background-color: var(--color-orange-500);
+    border-radius: var(--border-circle);
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    box-shadow: 0 0.125rem 0.75rem 0 var(--color-gray-500);
+
+    @media (min-width: $media-sm) {
+      bottom: 4rem;
+      right: 4rem;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    svg {
+      display: block;
+      width: 2rem;
+    }
   }
 }

@@ -1,62 +1,94 @@
 import { useEffect, useState } from "react";
 import Container from "../components/container";
-
-import AnimalCard from "../components/animalcard";
 import Devider from "../components/devider";
+import AnimalCard from "../components/animalcard";
 import Loader from "../components/loader";
 import Pagination from "../components/pagination";
+import Select from "../components/select";
+import { OptionType } from "../features/selectpage";
+import FloatingButton from "../components/floatingbutton";
 
-export type AnimalsType = {
-  animal: string;
+export type AnimalType = {
   name: string;
+  species: string;
+  animalClass: string;
   diet: string;
   habitat: string;
-  animalClass: string;
-  species: string;
 };
 
-//rows per page, koliko itema vidimo na stranici
-const rpp = 8;
-
 const noOfItems = 20;
-
-const noOfPages = Math.ceil(20 / 8);
-console.log(noOfPages);
+const rppOptions: OptionType[] = [
+  {
+    label: "4 životinje",
+    value: "4",
+  },
+  {
+    label: "8 životinje",
+    value: "8",
+  },
+  {
+    label: "12 životinje",
+    value: "12",
+  },
+];
 
 const Animals = () => {
-  const [animals, setAnimals] = useState<AnimalsType[]>([]);
+  const [animals, setAnimals] = useState<AnimalType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [page, setPage] = useState<number>(1);
+  //rows per page (limit koliko itema vidimo od jednom)
+  const [rpp, setRpp] = useState<number>(8);
 
   const getAnimals = () => {
+    setLoading(true);
     fetch(`http://localhost:3000/animals?_page=${page}&_limit=${rpp}`)
-      .then((response) => response.json())
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
       .then((data) => {
         setTimeout(() => {
           setAnimals(data);
           setLoading(false);
-        }, 2000);
+        }, 300);
       })
       .catch((err) => console.log(err));
   };
 
   useEffect(() => {
-    getAnimals();
-  }, [page]); //okinut će se svaki put kad se promijeni page - dependency
+    const numberOfPages = Math.ceil(noOfItems / rpp);
+    if (page > numberOfPages) {
+      setPage(numberOfPages);
+    } else {
+      getAnimals();
+    }
+  }, [page, rpp]);
 
   return (
-    <>
-      <h1>Animales</h1>
+    <Container>
       <Loader isActive={loading} />
-      <div className="grid grid--primary">
+      <div className="animals__header">
+        <h1 className="animals__title">Animals</h1>
+        <Select
+          options={rppOptions}
+          onChange={(activeRpp) => setRpp(Number(activeRpp.value))}
+          defaultValue={rppOptions[1]}
+        />
+      </div>
+      <Devider />
+      <div className="grid grid--primary type--san-serif">
         {animals.map((animal) => {
-          return <AnimalCard animal={animal} key={animal.name} />;
+          return <AnimalCard key={animal.name} animal={animal} />;
         })}
       </div>
       <Pagination
-        onPaginate={(activePage) => console.log("active page", activePage)}
+        activePage={page}
+        numberOfPages={Math.ceil(noOfItems / rpp)}
+        onPaginate={(activePage) => setPage(activePage)}
       />
-    </>
+      <FloatingButton />
+    </Container>
   );
 };
 

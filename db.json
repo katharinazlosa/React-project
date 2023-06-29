@@ -1,6 +1,7 @@
 {
   "animals": [
     {
+      "id": "1",
       "name": "Lion",
       "species": "Panthera leo",
       "animalClass": "Mammal",
@@ -8,6 +9,7 @@
       "habitat": "Grasslands and savannas"
     },
     {
+      "id": "2",
       "name": "Elephant",
       "species": "Loxodonta africana",
       "animalClass": "Mammal",
@@ -15,6 +17,7 @@
       "habitat": "Forests and grasslands"
     },
     {
+      "id": "3",
       "name": "Tiger",
       "species": "Panthera tigris",
       "animalClass": "Mammal",
@@ -22,6 +25,7 @@
       "habitat": "Various habitats, including forests and grasslands"
     },
     {
+      "id": "4",
       "name": "Giraffe",
       "species": "Giraffa camelopardalis",
       "animalClass": "Mammal",
@@ -29,6 +33,7 @@
       "habitat": "Savannas and open woodlands"
     },
     {
+      "id": "5",
       "name": "Penguin",
       "species": "Spheniscidae",
       "animalClass": "Bird",
@@ -36,6 +41,7 @@
       "habitat": "Antarctica and the surrounding areas"
     },
     {
+      "id": "6",
       "name": "Cheetah",
       "species": "Acinonyx jubatus",
       "animalClass": "Mammal",
@@ -44,6 +50,7 @@
     },
 
     {
+      "id": "7",
       "name": "Kangaroo",
       "species": "Macropus",
       "animalClass": "Mammal",
@@ -51,6 +58,7 @@
       "habitat": "Grasslands and forests"
     },
     {
+      "id": "8",
       "name": "Eagle",
       "species": "Accipitridae",
       "animalClass": "Bird",
@@ -58,6 +66,7 @@
       "habitat": "Various habitats, including mountains and forests"
     },
     {
+      "id": "9",
       "name": "Dolphin",
       "species": "Delphinidae",
       "animalClass": "Mammal",
@@ -65,6 +74,7 @@
       "habitat": "Oceans and seas"
     },
     {
+      "id": "10",
       "name": "Panda",
       "species": "Ailuropoda melanoleuca",
       "animalClass": "Mammal",
@@ -72,6 +82,7 @@
       "habitat": "Bamboo forests"
     },
     {
+      "id": "11",
       "name": "Gorilla",
       "species": "Gorilla gorilla",
       "animalClass": "Mammal",
@@ -79,6 +90,7 @@
       "habitat": "Rainforests"
     },
     {
+      "id": "12",
       "name": "Koala",
       "species": "Phascolarctos cinereus",
       "animalClass": "Mammal",
@@ -86,6 +98,7 @@
       "habitat": "Eucalyptus forests"
     },
     {
+      "id": "13",
       "name": "Hippopotamus",
       "species": "Hippopotamus amphibius",
       "animalClass": "Mammal",
@@ -93,6 +106,7 @@
       "habitat": "Rivers and lakes"
     },
     {
+      "id": "14",
       "name": "Peacock",
       "species": "Pavo cristatus",
       "animalClass": "Bird",
@@ -100,6 +114,7 @@
       "habitat": "Grasslands and forests"
     },
     {
+      "id": "15",
       "name": "Crocodile",
       "species": "Crocodylus niloticus",
       "animalClass": "Reptile",
@@ -107,6 +122,7 @@
       "habitat": "Rivers and wetlands"
     },
     {
+      "id": "16",
       "name": "Polar Bear",
       "species": "Ursus maritimus",
       "animalClass": "Mammal",
