@@ -8,7 +8,7 @@ import Button from "../components/button";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 
-const initialData: AnimalType = {
+const initialData: Omit<AnimalType, "id"> = {
   name: "",
   species: "",
   animalClass: "",
