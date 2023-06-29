@@ -6,6 +6,7 @@ import { AnimalType } from "../features/animals";
 import { ValuesType } from "../features/types";
 import Button from "../components/button";
 import { v4 as uuidv4 } from "uuid";
+import { useNavigate } from "react-router-dom";
 
 const initialData: AnimalType = {
   name: "",
@@ -18,6 +19,8 @@ const initialData: AnimalType = {
 const AnimalCreate = () => {
   const [inputsValue, setInputsValue] = useState<ValuesType>(initialData);
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
 
   const handleInputsValue = (value: string, id: string) => {
     const newState: ValuesType = { ...inputsValue };
@@ -65,7 +68,7 @@ const AnimalCreate = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Prošlo");
+        navigate("/animals");
       })
       .catch((err) => console.log(err));
   };

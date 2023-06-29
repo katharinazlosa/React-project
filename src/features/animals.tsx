@@ -7,6 +7,7 @@ import Pagination from "../components/pagination";
 import Select from "../components/select";
 import { OptionType } from "../features/selectpage";
 import FloatingButton from "../components/floatingbutton";
+import { Link, useNavigate } from "react-router-dom";
 
 export type AnimalType = {
   name: string;
@@ -38,6 +39,7 @@ const Animals = () => {
   const [page, setPage] = useState<number>(1);
   //rows per page (limit koliko itema vidimo od jednom)
   const [rpp, setRpp] = useState<number>(8);
+  const navigate = useNavigate();
 
   const getAnimals = () => {
     setLoading(true);
@@ -87,7 +89,9 @@ const Animals = () => {
         numberOfPages={Math.ceil(noOfItems / rpp)}
         onPaginate={(activePage) => setPage(activePage)}
       />
-      <FloatingButton />
+      <Link to="/animals/new">
+        <FloatingButton onClick={() => navigate("/animals/new")} />
+      </Link>
     </Container>
   );
 };
