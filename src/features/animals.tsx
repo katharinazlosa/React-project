@@ -61,7 +61,7 @@ const Animals = () => {
   };
 
   const getAnimalsCount = () => {
-    fetch("http://localhost:3000/animals")
+    fetch(`http://localhost:3000/animals`)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -69,6 +69,22 @@ const Animals = () => {
       })
       .then((data) => {
         setNoOfItems(data.length);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const handleDelete = (id: string) => {
+    fetch(`http://localhost:3000/animals/${id}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then((data) => {
+        getAnimals();
       })
       .catch((err) => console.log(err));
   };
@@ -87,21 +103,6 @@ const Animals = () => {
     }
   }, [page, rpp, noOfItems]);
 
-  const handleDelete = (id: string) => {
-    fetch(`http://localhost:3000/animals/${id}`, {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-      })
-      .then((data) => {
-        getAnimals();
-      })
-      .catch((err) => console.log(err));
-  };
   return (
     <Container>
       <Loader isActive={loading} />
@@ -130,9 +131,8 @@ const Animals = () => {
         numberOfPages={Math.ceil(noOfItems / rpp)}
         onPaginate={(activePage) => setPage(activePage)}
       />
-      <Link to="/animals/new">
-        <FloatingButton onClick={() => navigate("/animals/new")} />
-      </Link>
+
+      <FloatingButton onClick={() => navigate("/animals/new")} />
     </Container>
   );
 };

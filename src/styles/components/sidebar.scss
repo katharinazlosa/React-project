@@ -1,10 +1,5 @@
 .sidebar {
-  background-color: rgb(233, 239, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(233, 239, 255, 1) 0%,
-    rgba(30, 158, 217, 1) 85%
-  );
+  background-color: var(--color-white);
   position: fixed;
   top: 6rem;
   left: -20rem;
@@ -15,18 +10,17 @@
   display: flex;
   flex-direction: column;
   justify-content: top;
+  color: var(--color-blue-500);
   &--isActive {
     left: 0;
   }
   &__title {
-    color: white;
     font-size: 2rem;
-
     padding: 1rem 0;
   }
   &__link {
     text-decoration: none;
-    color: white;
+    color: var(--color-blue-500);
     font-size: 1.5rem;
     margin-bottom: 1rem;
     padding: 0.5rem 1rem;

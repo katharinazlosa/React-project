@@ -5,7 +5,7 @@ import Field from "../components/field";
 import { AnimalType } from "../features/animals";
 import { ValuesType } from "../features/types";
 import Button from "../components/button";
-import { v4 as uuidv4 } from "uuid";
+import uuid4 from "uuid4";
 import { useNavigate } from "react-router-dom";
 
 const initialData: Omit<AnimalType, "id"> = {
@@ -31,8 +31,7 @@ const AnimalCreate = () => {
     let getOut = false;
     let errorInputs = "";
 
-    const keys = Object.keys(inputsValue);
-
+    // const keys = Object.keys(inputsValue);
     // for(let i=0; i < keys.length, i++) {
     //   if(inputsValue[keys[i]] === "") {
     //     getOut= true;
@@ -50,14 +49,14 @@ const AnimalCreate = () => {
     if (getOut) {
       setError(
         "Moraju svi inputi biti popunjeni kako bi se životinja kreirala. Inputi koji se trebaju popuniti su" +
-          errorInputs
+          errorInputs.substring(0, errorInputs.length - 2)
       );
       return;
     } else {
       setError("");
     }
     const obj = inputsValue;
-    obj.id = "test";
+    obj.id = uuid4();
 
     fetch("http://localhost:3000/animals", {
       method: "POST",
@@ -66,7 +65,11 @@ const AnimalCreate = () => {
       },
       body: JSON.stringify(obj),
     })
-      .then((response) => response.json())
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
       .then((data) => {
         navigate("/animals");
       })

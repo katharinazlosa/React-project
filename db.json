@@ -49,36 +49,12 @@
       "habitat": "Grasslands and open plains"
     },
     {
-      "id": "7",
-      "name": "Kangaroo",
-      "species": "Macropus",
-      "animalClass": "Mammal",
-      "diet": "Herbivore",
-      "habitat": "Grasslands and forests"
-    },
-    {
-      "id": "8",
-      "name": "Eagle",
-      "species": "Accipitridae",
-      "animalClass": "Bird",
-      "diet": "Carnivore",
-      "habitat": "Various habitats, including mountains and forests"
-    },
-    {
       "id": "9",
       "name": "Dolphin",
       "species": "Delphinidae",
       "animalClass": "Mammal",
       "diet": "Carnivore",
       "habitat": "Oceans and seas"
-    },
-    {
-      "id": "10",
-      "name": "Panda",
-      "species": "Ailuropoda melanoleuca",
-      "animalClass": "Mammal",
-      "diet": "Herbivore",
-      "habitat": "Bamboo forests"
     },
     {
       "id": "11",
@@ -151,14 +127,6 @@
       "animalClass": "Bird",
       "diet": "Omnivore",
       "habitat": "Grasslands and deserts"
-    },
-    {
-      "name": "ddd",
-      "species": "dsww",
-      "animalClass": "wqwe",
-      "diet": "4wew",
-      "habitat": "gdfg",
-      "id": "test"
     }
   ]
 }

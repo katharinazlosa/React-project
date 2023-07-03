@@ -13,32 +13,30 @@ const Home = () => {
   const [modal, setModal] = useState<boolean>(false);
 
   return (
-    <Container>
-      <h1>Hello world</h1>
-      <Button text="Click me!" />
-      <Button color="red" text="Neki novi button" />
-      <Devider />
-      <h1>neki naslov</h1>
-      <div>teki text</div>
-
-      <Input
+    <div className="home">
+      <div className="home__text">
+        <h1>Hello world!</h1>
+        {/* <Button text="Click me!" />
+      <Button color="red" text="Neki novi button" /> */}
+        {/* <Input
         icon={<IconForest />}
         value={newState}
         onChange={(value: string) => setNewState(value)}
-      />
-      <Button text="Open modal" onClick={() => setModal(true)} />
-      <Modal
-        onSuccess={() => {
-          alert("Success");
-          setModal(false);
-        }}
-        isOpen={modal}
-        title="Modal naslov"
-        onClose={() => setModal(false)}
-      >
-        This is random modal text.
-      </Modal>
-    </Container>
+      /> */}
+        <Button text="Open modal" onClick={() => setModal(true)} color="blue" />
+        <Modal
+          onSuccess={() => {
+            alert("Success");
+            setModal(false);
+          }}
+          isOpen={modal}
+          title="Modal naslov"
+          onClose={() => setModal(false)}
+        >
+          This is random modal text.
+        </Modal>
+      </div>
+    </div>
   );
 };
 export default Home;
