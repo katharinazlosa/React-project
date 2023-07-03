@@ -1,60 +1,12 @@
 {
   "animals": [
     {
-      "id": "1",
-      "name": "Lion",
-      "species": "Panthera leo",
-      "animalClass": "Mammal",
-      "diet": "Carnivore",
-      "habitat": "Grasslands and savannas"
-    },
-    {
-      "id": "2",
-      "name": "Elephant",
-      "species": "Loxodonta africana",
-      "animalClass": "Mammal",
-      "diet": "Herbivore",
-      "habitat": "Forests and grasslands"
-    },
-    {
-      "id": "3",
-      "name": "Tiger",
-      "species": "Panthera tigris",
-      "animalClass": "Mammal",
-      "diet": "Carnivore",
-      "habitat": "Various habitats, including forests and grasslands"
-    },
-    {
-      "id": "4",
-      "name": "Giraffe",
-      "species": "Giraffa camelopardalis",
-      "animalClass": "Mammal",
-      "diet": "Herbivore",
-      "habitat": "Savannas and open woodlands"
-    },
-    {
-      "id": "5",
-      "name": "Penguin",
-      "species": "Spheniscidae",
-      "animalClass": "Bird",
-      "diet": "Carnivore",
-      "habitat": "Antarctica and the surrounding areas"
-    },
-    {
       "id": "6",
       "name": "Cheetah",
       "species": "Acinonyx jubatus",
       "animalClass": "Mammal",
-      "diet": "Carnivore",
-      "habitat": "Grasslands and open plains"
-    },
-    {
-      "id": "9",
-      "name": "Dolphin",
-      "species": "Delphinidae",
-      "animalClass": "Mammal",
-      "diet": "Carnivore",
-      "habitat": "Oceans and seas"
+      "habitat": "Grasslands and open plains",
+      "diet": "Carnivore"
     },
     {
       "id": "11",
@@ -79,14 +31,6 @@
       "animalClass": "Mammal",
       "diet": "Herbivore",
       "habitat": "Rivers and lakes"
-    },
-    {
-      "id": "14",
-      "name": "Peacock",
-      "species": "Pavo cristatus",
-      "animalClass": "Bird",
-      "diet": "Omnivore",
-      "habitat": "Grasslands and forests"
     },
     {
       "id": "15",

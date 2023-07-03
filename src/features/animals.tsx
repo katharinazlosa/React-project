@@ -7,7 +7,7 @@ import Pagination from "../components/pagination";
 import Select from "../components/select";
 import { OptionType } from "../features/selectpage";
 import FloatingButton from "../components/floatingbutton";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export type AnimalType = {
   name: string;
@@ -120,7 +120,7 @@ const Animals = () => {
           return (
             <AnimalCard
               onDelete={(id: string) => handleDelete(id)}
-              key={animal.name}
+              key={animal.id}
               animal={animal}
             />
           );

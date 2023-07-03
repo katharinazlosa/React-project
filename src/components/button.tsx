@@ -5,7 +5,6 @@ type ButtonProps = {
   color?: "red" | "green" | "blue" | "purple" | "white";
   onClick?: (value: string) => void;
   disabled?: boolean;
-  onFinish?: (value: string) => void;
 };
 // & ButtonHTMLAttributes<HTMLButtonElement>; ovo dodamo gore iza }
 //a to smo dobili hoveranjem preko button elementa

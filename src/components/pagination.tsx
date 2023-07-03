@@ -25,17 +25,15 @@ const Pagination = ({
           .fill("")
           .map((page, index) => {
             return (
-              <>
-                <span
-                  key={index}
-                  onClick={() => onPaginate(index + 1)}
-                  className={`pagination__item ${
-                    activePage === index + 1 ? "isActive" : ""
-                  }`}
-                >
-                  {index + 1}
-                </span>
-              </>
+              <span
+                key={index}
+                onClick={() => onPaginate(index + 1)}
+                className={`pagination__item ${
+                  activePage === index + 1 ? "isActive" : ""
+                }`}
+              >
+                {index + 1}
+              </span>
             );
           })}
         <span

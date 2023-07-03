@@ -9,6 +9,7 @@ import ProgressBarPage from "./features/progressbarpage";
 import SelectPage from "./features/selectpage";
 import Animals from "./features/animals";
 import AnimalCreate from "./components/animalcreate";
+import AnimalEdit from "./components/animaledit";
 
 function App() {
   return (
@@ -24,7 +25,11 @@ function App() {
           <Route path="animals/new" element={<AnimalCreate />} />
           <Route
             path="animals/:animalId"
-            element={<>Došli smo na stranicu neke životinje</>}
+            element={
+              <>
+                <AnimalEdit />
+              </>
+            }
           />
           <Route path="*" element={<NoMatch />} />
         </Route>

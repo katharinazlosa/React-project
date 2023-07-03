@@ -8,13 +8,41 @@ import Button from "../components/button";
 import uuid4 from "uuid4";
 import { useNavigate } from "react-router-dom";
 
-const initialData: Omit<AnimalType, "id"> = {
+type InputsType = {
+  id: string;
+  label: string;
+};
+
+export const initialData: Omit<AnimalType, "id"> = {
   name: "",
   species: "",
   animalClass: "",
   diet: "",
   habitat: "",
 };
+
+export const baseInputs: InputsType[] = [
+  {
+    id: "name",
+    label: "Name of an animal",
+  },
+  {
+    id: "species",
+    label: "Animal species",
+  },
+  {
+    id: "animalClass",
+    label: "Animal class",
+  },
+  {
+    id: "diet",
+    label: "What this animal eats",
+  },
+  {
+    id: "habitat",
+    label: "Where this animal lives",
+  },
+];
 
 const AnimalCreate = () => {
   const [inputsValue, setInputsValue] = useState<ValuesType>(initialData);
@@ -82,36 +110,17 @@ const AnimalCreate = () => {
       <Devider />
       {error && <div className="message message--error">{error}</div>}
       <div>
-        <Field
-          id="name"
-          value={inputsValue.name}
-          label="Name of an animal"
-          onChange={(newValue) => handleInputsValue(newValue, "name")}
-        />
-        <Field
-          id="species"
-          value={inputsValue.species}
-          label="Animal species"
-          onChange={(newValue) => handleInputsValue(newValue, "species")}
-        />
-        <Field
-          id="animalClass"
-          value={inputsValue.animalClass}
-          label="Animal class"
-          onChange={(newValue) => handleInputsValue(newValue, "animalClass")}
-        />
-        <Field
-          id="diet"
-          value={inputsValue.diet}
-          label="What this animal eats"
-          onChange={(newValue) => handleInputsValue(newValue, "diet")}
-        />
-        <Field
-          id="habitat"
-          value={inputsValue.habitat}
-          label="What this animal lives"
-          onChange={(newValue) => handleInputsValue(newValue, "habitat")}
-        />
+        {baseInputs.map((field) => {
+          return (
+            <Field
+              key={field.id}
+              id={field.id}
+              value={inputsValue[field.id]}
+              label={field.label}
+              onChange={(newValue) => handleInputsValue(newValue, field.id)}
+            />
+          );
+        })}
       </div>
       <Button text="Dodaj životinju" onClick={() => onSubmit(inputsValue)} />
     </Container>
