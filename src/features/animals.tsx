@@ -90,7 +90,7 @@ const Animals = () => {
   const handleDelete = (id: string) => {
     fetch(`http://localhost:3000/animals/${id}`, {
       method: "DELETE",
-      header: "Content-Type": "application/json",
+      headers: { "Content-Type": "application/json" },
     })
       .then((res) => {
         if (res.ok) {
@@ -98,7 +98,7 @@ const Animals = () => {
         }
       })
       .then((data) => {
-       getAnimals();
+        getAnimals();
       })
       .catch((err) => console.log(err));
   };
@@ -116,7 +116,13 @@ const Animals = () => {
       <Devider />
       <div className="grid grid--primary type--san-serif">
         {animals.map((animal) => {
-          return <AnimalCard onDelete={(id:string) => handleDelete(id)} key={animal.name} animal={animal} />;
+          return (
+            <AnimalCard
+              onDelete={(id: string) => handleDelete(id)}
+              key={animal.name}
+              animal={animal}
+            />
+          );
         })}
       </div>
       <Pagination
