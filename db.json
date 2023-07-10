@@ -72,5 +72,62 @@
       "diet": "Omnivore",
       "habitat": "Grasslands and deserts"
     }
+  ],
+
+  "characters": [
+    {
+      "name": "Frodo Baggins",
+      "race": "Hobbit",
+      "gender": "Male",
+      "age": 33,
+      "weapon": "Sting",
+      "affiliation": "Fellowship of the Ring",
+      "quote": "I will take the Ring, though I do not know the way."
+    },
+    {
+      "name": "Aragorn",
+      "race": "Human",
+      "gender": "Male",
+      "age": 87,
+      "weapon": "Andúril",
+      "affiliation": "Gondor, Rangers of the North",
+      "quote": "A day may come when the courage of men fails, but it is not this day."
+    },
+    {
+      "name": "Gandalf",
+      "race": "Maia",
+      "gender": "Male",
+      "age": "Unknown",
+      "weapon": "Glamdring",
+      "affiliation": "Fellowship of the Ring, White Council",
+      "quote": "All we have to decide is what to do with the time that is given to us."
+    },
+    {
+      "name": "Legolas",
+      "race": "Elf",
+      "gender": "Male",
+      "age": 2931,
+      "weapon": "Bow and arrows",
+      "affiliation": "Fellowship of the Ring, Woodland Realm",
+      "quote": "They're taking the hobbits to Isengard!"
+    },
+    {
+      "name": "Gimli",
+      "race": "Dwarf",
+      "gender": "Male",
+      "age": 139,
+      "weapon": "Battle-axe",
+      "affiliation": "Fellowship of the Ring",
+      "quote": "Certainty of death, small chance of success... What are we waiting for?"
+    },
+    {
+      "name": "Samwise Gamgee",
+      "race": "Hobbit",
+      "gender": "Male",
+      "age": 38,
+      "weapon": "Gardening tools",
+      "affiliation": "Fellowship of the Ring",
+      "quote": "I can't carry it for you, but I can carry you!"
+    }
   ]
 }

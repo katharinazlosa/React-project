@@ -14,6 +14,10 @@ const headerLinks = [
     path: "/animals",
     label: "Animals",
   },
+  {
+    path: "/lotr",
+    label: "Lotr",
+  },
 ];
 
 type HeaderProps = {
